@@ -6,7 +6,8 @@
         @csrf
         <div class="mb-3">
             <label for="name">Name</label>
-            <input type="name" name="name" class="form-control" id="name" placeholder="Enter name">
+            <input type="name" name="name" class="form-control" id="name" placeholder="Enter name"
+                value={{ old('name') }}>
             @error('name')
             <p>{{ $message }}</p>
             @enderror
@@ -14,7 +15,7 @@
         <div class="mb-3">
             <label for="email">Email address</label>
             <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                placeholder="Enter email">
+                placeholder="Enter email" value={{ old('email') }}>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             @error('email')
             <p>{{ $message }}</p>

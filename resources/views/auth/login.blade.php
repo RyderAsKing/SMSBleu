@@ -6,7 +6,8 @@
         @csrf
         <div class="mb-3">
             <label for="email">Email address</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+            <input type="email" name="email" class="form-control" id="email" placeholder="Enter email"
+                value={{ old('email') }}>
             @error('email')
             <p>{{ $message }}</p>
             @enderror
