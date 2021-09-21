@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class OverviewController extends Controller
 {
@@ -15,6 +16,9 @@ class OverviewController extends Controller
 
     public function index()
     {
-        return view('dashboard.index');
+        $user = Auth::user();
+        $pricing = env('SMS_PRICING');
+        $logs = Auth::user()->log()->paginate(10);
+        return view('dashboard.index', ['user' => $user, 'pricing' => $pricing, 'logs' => $logs]);
     }
 }
