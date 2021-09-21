@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Dashboard\OverviewController;
+use App\Http\Controllers\Dashboard\AdminAreaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/admin', [AdminAreaController::class, 'index'])->name('dashboard.admin');
