@@ -35,7 +35,7 @@
                         @foreach ($logs as $log)
                         <hr>
                         <div class="col-2"><a style="color: white"
-                                href={{ route('dashboard.admin.edituser', $log->user->id) }}>{{ $log->user->email }}</a>
+                                href={{ route('dashboard.admin.users.edit', $log->user->id) }}>{{ $log->user->email }}</a>
                         </div>
                         <div class="col-2">{{ $log->from }}</div>
                         <div class="col-2">{{ $log->to }}</div>

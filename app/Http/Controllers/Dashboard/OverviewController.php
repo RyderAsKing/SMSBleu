@@ -18,7 +18,7 @@ class OverviewController extends Controller
     {
         $user = Auth::user();
         $pricing = env('SMS_PRICING');
-        $logs = Auth::user()->log()->paginate(10);
+        $logs = Auth::user()->log()->latest()->paginate(10);
         return view('dashboard.index', ['user' => $user, 'pricing' => $pricing, 'logs' => $logs]);
     }
 }
