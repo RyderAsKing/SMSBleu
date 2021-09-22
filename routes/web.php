@@ -35,4 +35,5 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
-Route::get('/dashboard/admin', [AdminAreaController::class, 'index'])->name('dashboard.admin');
+Route::get('/dashboard/admin', [App\Http\Controllers\Dashboard\Admin\OverviewController::class, 'index'])->name('dashboard.admin');
+Route::get('/dashboard/admin/edituser/{id}', [App\Http\Controllers\Dashboard\Admin\OverviewController::class, 'index'])->name('dashboard.admin.edituser');

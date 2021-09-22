@@ -53,15 +53,23 @@
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">Logs</div>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-3"><strong>From</strong></div>
+                        <div class="col-3"><strong>To</strong></div>
+                        <div class="col-3"><strong>Content</strong></div>
+                        <div class="col-3"><strong>Created at</strong></div>
+                    </div>
                     @if($logs->count() > 0)
                     <div class="row">
                         @foreach ($logs as $log)
+                        <hr>
                         <div class="col-3">{{ $log->from }}</div>
                         <div class="col-3">{{ $log->to }}</div>
                         <div class="col-3">{{ $log->message }}</div>
-                        <div class="col-3">{{ $log->create_at->diffForHumans() }}</div>
+                        <div class="col-3">{{ $log->created_at->diffForHumans() }}</div>
                         @endforeach
                     </div>
+                    {{ $logs->links() }}
                     @else
                     <div class="alert alert-warning">No logs available</div>
                     @endif
