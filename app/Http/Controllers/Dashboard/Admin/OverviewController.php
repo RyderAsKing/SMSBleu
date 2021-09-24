@@ -20,7 +20,7 @@ class OverviewController extends Controller
         $users = User::all();
         $users_registered = $users->count();
         $total_credits = 0;
-        $logs = Log::latest()->paginate(10);
+        $logs = Log::latest()->paginate(4);
         foreach ($users as $user) {
             $total_credits = $total_credits + $user->balance;
         }

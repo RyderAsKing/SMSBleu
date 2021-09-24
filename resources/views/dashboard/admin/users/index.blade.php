@@ -1,48 +1,50 @@
 @extends('layout.app')
 @section('content')
 <div class="container">
-    <h3 style="text-align: center; margin-top: 15px;">Users</h3>
-    <div class="row" style="margin-top: 2%;">
+    <h3 style="text-align: center; margin-top: 15px;">Managing Users</h3>
+    <div class="row">
         <div class="col-sm-12">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-header">All Users</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-2"><strong>Name</strong></div>
-                        <div class="col-2"><strong>User Email</strong></div>
-                        <div class="col-2"><strong>Credits</strong></div>
-                        <div class="col-2"><strong>Messages Sent</strong></div>
-                        <div class="col-2"><strong>Created at</strong></div>
-                        <div class="col-2"><strong>Actions</strong></div>
-                    </div>
-                    @if($users->count() > 0)
-                    <div class="row">
-                        @foreach ($users as $user)
-                        <hr>
-                        <div class="col-2">{{ $user->email }}
-                        </div>
-                        <div class="col-2">{{ $user->name }}
-                            (<strong>{{ $user->type == 1 ? 'Admin' : 'User' }}</strong>)
-                        </div>
-                        <div class="col-2">{{ $user->balance }}</div>
-                        <div class="col-2">{{ $user->sent }}</div>
-                        <div class="col-2">{{ $user->created_at->diffForHumans() }}</div>
-                        <div class="col-2">
-                            <a style="color: white" href={{ route('dashboard.admin.users.edit', $user->id) }}><button
-                                    class="btn btn-success" style="margin-bottom: 5px">Edit</button></a>
+            <table id="users" class="table " style="width:100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>User Email</th>
+                        <th>User Type</th>
+                        <th>Credits</th>
+                        <th>Messages Sent</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->type == 1 ? 'Admin' : 'User' }}</td>
+                        <td>{{ $user->balance }}</td>
+                        <td>{{ $user->sent }}</td>
+                        <td>{{ $user->created_at->diffForHumans() }}</td>
+                        <td>
+                            <a href="{{ route('dashboard.admin.users.edit', $user->id) }}"><button
+                                    class="btn btn-primary">Edit</button></a>
                             <a href="{{ route('dashboard.admin.users.delete', $user->id) }}"><button
-                                    class="btn btn-danger" style="margin-bottom: 5px">Delete</button></a>
-                        </div>
-                        @endforeach
-                    </div>
+                                    class="btn btn-danger">Delete</button></a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
 
-                    {{ $users->links() }}
-                    @else
-                    <div class="alert alert-warning">No logs available</div>
-                    @endif
-                </div>
-            </div>
+            </table>
+            <script>
+                $(document).ready(() => {
+                    $('#users').DataTable();
+                });
+            </script>
         </div>
     </div>
+</div>
 </div>
 @endsection

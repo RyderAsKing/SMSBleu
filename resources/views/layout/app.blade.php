@@ -11,12 +11,14 @@
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/alertify.js') }}"></script>
         <script src="{{ asset('js/fontawesome.js') }}"></script>
+        <script src="{{ asset('js/datatables.js')}}"></script>
 
         <!-- Styling -->
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
         <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
         <link rel="stylesheet" href="{{ asset('css/alertify.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
     </head>
 
     <body>

@@ -3,15 +3,16 @@
 <div class="container">
     <h3 style="text-align: center; margin-top: 15px;">Admin Dashboard</h3>
     <div class="row" style="margin-top: 2%;">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6" style="text-align: center">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">Users Registered</div>
                 <div class="card-body">
                     <h3>{{ $users_registered }}</h3>
+                    <button class="btn btn-outline-dark text-white">Manage users</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6" style="text-align: center">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">Total Credits</div>
                 <div class="card-body">

@@ -16,7 +16,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::latest()->paginate(10);
+        $users = User::all();
         return view('dashboard.admin.users.index', ['users' => $users]);
     }
 
@@ -25,5 +25,9 @@ class UsersController extends Controller
         User::findOrFail($id);
         User::where('id', $id)->delete();
         return redirect()->back()->with('success', 'Deleted the user successfully');
+    }
+
+    public fucntion edit($id) {
+        $user = "";
     }
 }
