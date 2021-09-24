@@ -19,6 +19,7 @@ use App\Http\Controllers\Dashboard\AdminAreaController;
 |
 */
 
+// Basic
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -26,6 +27,7 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+// Auth
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -34,7 +36,10 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
+// User
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
+
+// Admin
 Route::get('/dashboard/admin', [App\Http\Controllers\Dashboard\Admin\OverviewController::class, 'index'])->name('dashboard.admin');
 Route::get('/dashboard/admin/users', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'index'])->name('dashboard.admin.users');
 Route::get('/dashboard/admin/users/{id}', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'edit'])->name('dashboard.admin.users.edit');
