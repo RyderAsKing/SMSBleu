@@ -39,4 +39,5 @@ Route::get('/dashboard/admin', [App\Http\Controllers\Dashboard\Admin\OverviewCon
 Route::get('/dashboard/admin/users', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'index'])->name('dashboard.admin.users');
 Route::get('/dashboard/admin/users/{id}', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'edit'])->name('dashboard.admin.users.edit');
 Route::post('/dashboard/admin/users/{id}', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'store'])->name('dashboard.admin.users.edit');
-Route::get('/dashboard/admin/users/{id}/delete', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'destroy'])->name('dashboard.admin.users.delete');
+Route::post('/dashboard/admin/users/{id}/credits', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'credits'])->name('dashboard.admin.users.edit.credits');
+Route::get('/dashboard/admin/users/{id}/delete', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'destroy'])->name('dashboard.admin.users.edit.delete');

@@ -30,7 +30,7 @@
                         <td>
                             <a href="{{ route('dashboard.admin.users.edit', $user->id) }}"><button
                                     class="btn btn-primary">Edit</button></a>
-                            <a href="{{ route('dashboard.admin.users.delete', $user->id) }}"><button
+                            <a href="{{ route('dashboard.admin.users.edit.delete', $user->id) }}"><button
                                     class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>

@@ -33,4 +33,34 @@ class UsersController extends Controller
         $logs = $user->log()->get();
         return view('dashboard.admin.users.edit', ['user' => $user, 'logs' => $logs]);
     }
+
+    public function store(Request $request, $id)
+    {
+        $this->validate($request, ['name' => 'required', 'email' => 'required|email|unique:users,email']);
+        $user = User::findOrFail($request->id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+        return redirect()->route('dashboard.admin.users.edit', $id)->with(['success' => 'Edited successfully']);
+    }
+
+    public function credits(Request $request, $id)
+    {
+        $this->validate($request, ['action' => 'required|integer', 'amount' => 'required|integer']);
+        $user = User::findOrFail($request->id);
+        $current_bal = $user->balance;
+        $updated_bal = "";
+        if ($request->action == 0) {
+            $updated_bal = $current_bal + $request->amount;
+        }
+        if ($request->action == 1) {
+            $updated_bal = $current_bal - $request->amount;
+        }
+        $user->balance = $updated_bal;
+        $user->save();
+
+        return redirect()->route('dashboard.admin.users.edit', $id)->with(['success' => 'Edited successfully']);
+    }
 }
