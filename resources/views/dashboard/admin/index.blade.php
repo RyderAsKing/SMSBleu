@@ -24,6 +24,7 @@
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">All Logs</div>
                 <div class="card-body">
+                    @if($logs->count() > 0)
                     <div class="row">
                         <div class="col-2"><strong>User Email</strong></div>
                         <div class="col-2"><strong>From</strong></div>
@@ -31,7 +32,6 @@
                         <div class="col-4"><strong>Content</strong></div>
                         <div class="col-2"><strong>Created at</strong></div>
                     </div>
-                    @if($logs->count() > 0)
                     <div class="row">
                         @foreach ($logs as $log)
                         <hr>

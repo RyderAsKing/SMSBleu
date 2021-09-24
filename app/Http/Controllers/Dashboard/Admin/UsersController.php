@@ -27,7 +27,10 @@ class UsersController extends Controller
         return redirect()->back()->with('success', 'Deleted the user successfully');
     }
 
-    public fucntion edit($id) {
-        $user = "";
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        $logs = $user->log()->get();
+        return view('dashboard.admin.users.edit', ['user' => $user, 'logs' => $logs]);
     }
 }
