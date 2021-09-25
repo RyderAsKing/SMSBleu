@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddSentToUsers extends Migration
+class AddLanguageToUser extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class AddSentToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('sent');
+            $table->string('language');
         });
     }
 
@@ -28,7 +28,7 @@ class AddSentToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropColumn('sent');
+            $table->dropColumn('language');
         });
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\App as Application;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -19,6 +19,15 @@ use App\Http\Controllers\Dashboard\AdminAreaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Language
+Route::get('/language/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'fr'])) {
+        abort(400);
+    }
+    Application::setLocale('en');
+    //
+});
 
 // Basic
 Route::get('/', function () {
