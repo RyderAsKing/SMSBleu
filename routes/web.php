@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Dashboard\MessageController;
 use App\Http\Controllers\Dashboard\OverviewController;
 use App\Http\Controllers\Dashboard\AdminAreaController;
 
@@ -38,6 +39,7 @@ Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
 // User
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
+Route::post('/dashboard/message', [MessageController::class, 'store'])->name('dashboard.message');
 
 // Admin
 Route::get('/dashboard/admin', [App\Http\Controllers\Dashboard\Admin\OverviewController::class, 'index'])->name('dashboard.admin');

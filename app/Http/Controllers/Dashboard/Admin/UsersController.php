@@ -30,7 +30,7 @@ class UsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        $logs = $user->log()->get();
+        $logs = $user->log()->latest()->paginate(5);
         return view('dashboard.admin.users.edit', ['user' => $user, 'logs' => $logs]);
     }
 

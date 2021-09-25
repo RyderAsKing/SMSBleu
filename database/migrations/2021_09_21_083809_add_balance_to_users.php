@@ -15,7 +15,7 @@ class AddBalanceToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('balance');
+            $table->double('balance', 8, 2);
         });
     }
 

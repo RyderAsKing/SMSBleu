@@ -8,21 +8,31 @@
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">{{ __('text.app.quicksend') }}</div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('dashboard.message') }}" method="post">
+                        @csrf
                         <div class="form-group">
                             <label for="number">{{ __('text.app.to') }}</label>
                             <input type="number" class="form-control" id="number" name="tel"
-                                placeholder="Include country code">
+                                placeholder="Include country code" value={{ old('tel') }}>
+                            @error('tel')
+                            <p style="color: yellow">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="from">{{ __('text.app.from') }}</label>
                             <input type="text" class="form-control" id="from" placeholder="{{ __('text.app.from') }}"
-                                name="from">
+                                name="from" value={{ old('from') }}>
+                            @error('from')
+                            <p style="color: yellow">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="message">{{ __('text.app.message') }}</label>
                             <textarea class="form-control" id="message" rows="3" name="message"
-                                placeholder="{{ __('text.app.message') }}"></textarea>
+                                placeholder="{{ __('text.app.message') }}" value={{ old('message') }}></textarea>
+                            @error('message')
+                            <p style="color: yellow">{{ $message }}</p>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-success" style="margin-top: 5px"><i
                                 class="fas fa-paper-plane"></i> {{ __('text.app.send') }}</button>
