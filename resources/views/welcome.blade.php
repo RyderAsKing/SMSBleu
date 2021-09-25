@@ -3,10 +3,9 @@
 <section class="jumbotron text-center" style="margin-top: 15%">
     <div class="container">
         <h1 class="jumbotron-heading">SMSBleu</h1>
-        <p class="lead text-muted">Send SMS with your own custom Sender IDs. SMSBleu is easy to use, but powerful and
-            reliable enough for marketers and power-users.</p>
+        <p class="lead text-muted">{{ __('text.home.welcome') }}</p>
         <p>
-            <a href="{{ route('dashboard') }}" class="btn btn-primary my-2">Dashboard</a>
+            <a href="{{ route('dashboard') }}" class="btn btn-primary my-2">{{ __('text.app.dashboard') }}</a>
         </p>
     </div>
 </section>

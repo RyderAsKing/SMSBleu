@@ -29,9 +29,9 @@
                         <td>{{ $user->created_at->diffForHumans() }}</td>
                         <td>
                             <a href="{{ route('dashboard.admin.users.edit', $user->id) }}"><button
-                                    class="btn btn-primary">Edit</button></a>
+                                    class="btn btn-primary">{{ __('text.app.edit') }}</button></a>
                             <a href="{{ route('dashboard.admin.users.edit.delete', $user->id) }}"><button
-                                    class="btn btn-danger">Delete</button></a>
+                                    class="btn btn-danger">{{ __('text.app.delete') }}</button></a>
                         </td>
                     </tr>
                     @endforeach

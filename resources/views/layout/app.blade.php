@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
         <meta charset="UTF-8">
@@ -12,6 +12,7 @@
         <script src="{{ asset('js/alertify.js') }}"></script>
         <script src="{{ asset('js/fontawesome.js') }}"></script>
         <script src="{{ asset('js/datatables.js')}}"></script>
+        <script src="{{ asset('js/bootstrap.js')}}"></script>
 
         <!-- Styling -->
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -34,28 +35,31 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                            <a class="nav-link" href="{{ route('dashboard') }}">{{ __('text.app.dashboard') }}</a>
                         </li>
                         @auth
                         @if( Auth::user()->type == 1)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard.admin') }}">Admin Dashboard</a>
+                            <a class="nav-link"
+                                href="{{ route('dashboard.admin') }}">{{ __('text.app.dashboard.admin') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard.admin.users') }}">Manage users</a>
+                            <a class="nav-link"
+                                href="{{ route('dashboard.admin.users') }}">{{ __('text.app.dashboard.admin.users') }}</a>
                         </li>
                         @endif
                         @endauth
                     </ul>
                     <div class="d-flex">
                         @guest
-                        <a href="{{ route('login') }}"><button class="btn btn-outline-light">Login</button></a>
+                        <a href="{{ route('login') }}"><button
+                                class="btn btn-outline-light">{{ __('text.app.login') }}</button></a>
                         <a href="{{ route('register') }}"><button class="btn btn-outline-light"
-                                style="margin-left: 5px">Register</button></a>
+                                style="margin-left: 5px">{{ __('text.app.register') }}</button></a>
                         @endguest
                         @auth
                         <a href="{{ route('logout') }}"><button
-                                class="btn btn-danger btn-outline-light">Logout</button></a>
+                                class="btn btn-danger btn-outline-light">{{ __('text.app.logout') }}</button></a>
                         @endauth
                     </div>
                 </div>

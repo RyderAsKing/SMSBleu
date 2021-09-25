@@ -1,20 +1,21 @@
 @extends('layout.app')
 @section('content')
 <div class="container">
-    <h3 style="text-align: center; margin-top: 15px;">Admin Dashboard</h3>
+    <h3 style="text-align: center; margin-top: 15px;">{{ __('text.app.dashboard.admin') }}</h3>
     <div class="row" style="margin-top: 2%;">
         <div class="col-sm-12 col-md-6" style="text-align: center">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-header">Users Registered</div>
+                <div class="card-header">{{ __('text.dashboard.admin.users_registered') }}</div>
                 <div class="card-body">
                     <h3>{{ $users_registered }}</h3>
-                    <button class="btn btn-outline-dark text-white">Manage users</button>
+                    <button
+                        class="btn btn-outline-dark text-white">{{ __('text.dashboard.admin.manage_users') }}</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-12 col-md-6" style="text-align: center">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-header">Total Credits</div>
+                <div class="card-header">{{ __('text.dashboard.admin.total_credits') }}</div>
                 <div class="card-body">
                     <h3>{{ $total_credits }}</h3>
                 </div>
@@ -22,15 +23,15 @@
         </div>
         <div class="col-sm-12">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-header">All Logs</div>
+                <div class="card-header">{{ __('text.dashboard.admin.all_logs') }}</div>
                 <div class="card-body">
                     @if($logs->count() > 0)
                     <div class="row">
                         <div class="col-2"><strong>User Email</strong></div>
-                        <div class="col-2"><strong>From</strong></div>
-                        <div class="col-2"><strong>To</strong></div>
-                        <div class="col-4"><strong>Content</strong></div>
-                        <div class="col-2"><strong>Created at</strong></div>
+                        <div class="col-2"><strong>{{ __('text.app.from') }}</strong></div>
+                        <div class="col-2"><strong>{{ __('text.app.to') }}</strong></div>
+                        <div class="col-4"><strong>{{ __('text.app.message') }}</strong></div>
+                        <div class="col-2"><strong>{{ __('text.app.created_at') }}</strong></div>
                     </div>
                     <div class="row">
                         @foreach ($logs as $log)
@@ -47,7 +48,7 @@
 
                     {{ $logs->links() }}
                     @else
-                    <div class="alert alert-warning">No logs available</div>
+                    <div class="alert alert-warning">{{ __('text.error.no_logs') }}</div>
                     @endif
                 </div>
             </div>
