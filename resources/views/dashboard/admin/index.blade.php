@@ -8,8 +8,8 @@
                 <div class="card-header">{{ __('text.dashboard.admin.users_registered') }}</div>
                 <div class="card-body">
                     <h3>{{ $users_registered }}</h3>
-                    <button
-                        class="btn btn-outline-dark text-white">{{ __('text.dashboard.admin.manage_users') }}</button>
+                    <a href="{{ route('dashboard.admin.users')}}"><button
+                            class="btn btn-outline-dark text-white">{{ __('text.dashboard.admin.manage_users') }}</button></a>
                 </div>
             </div>
         </div>

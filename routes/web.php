@@ -46,6 +46,15 @@ Route::post('/login', [LoginController::class, 'store']);
 
 Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
 
+// Other
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
 // User
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
 Route::post('/dashboard/message', [MessageController::class, 'store'])->name('dashboard.message');

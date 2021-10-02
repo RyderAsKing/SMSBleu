@@ -39,7 +39,7 @@ return [
     'auth.placeholder.password' => 'Entrer le mot de passe',
 
     // dashboard.index.blade.php
-    'dashboard.tos' => "Assurez-vous de lire nos conditions d'utilisation, tous les SMS doivent être conformes aux lois et réglementations applicables. Toutes les URL doivent être approuvées. Pour que votre URL soit ajoutée à la liste blanche, contactez-nous.",
+    'dashboard.tos' => 'Assurez-vous de lire nos <a href="/terms"> conditions d\'utilisation </a>, tous les SMS doivent être conformes aux lois et réglementations applicables. Toutes les URL doivent être approuvées. Pour que votre URL soit ajoutée à la liste blanche, <a href="/contact"> contactez-nous </a>.',
     'dashboard.welcome' => 'Hé, bon retour :name (:email)',
     'dashboard.information' => "Voici quelques informations rapides concernant votre compte.",
 

@@ -40,7 +40,7 @@ return [
     'auth.placeholder.password' => 'Enter password',
 
     // dashboard.index.blade.php
-    'dashboard.tos' => 'Make sure you read our terms of service, all SMS must comply with applicable laws and regulations. All URLs must be approved. To have your URL whitelisted, contact us.',
+    'dashboard.tos' => 'Make sure you read our <a href="/terms">terms of service</a>, all SMS must comply with applicable laws and regulations. All URLs must be approved. To have your URL whitelisted, <a href="/contact">contact us</a>.',
     'dashboard.welcome' => 'Hey, welcome back :name (:email)',
     'dashboard.information' => "Here's some quick information regarding your account.",
 

@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-sm-12 col-md-6">
-            <div class="alert alert-info">{{ __('text.dashboard.tos') }}</div>
+            <div class="alert alert-info">{!! __('text.dashboard.tos') !!}</div>
             <div class="card text-white bg-primary mb-3">
                 <div class="card-header">{{ __('text.app.profile') }}</div>
                 <div class="card-body">
