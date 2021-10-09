@@ -34,10 +34,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">{{ __('text.app.dashboard') }}</a>
                         </li>
-                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard.profile') }}">{{ __('text.app.edit') }}
+                                {{ __('text.app.profile') }}</a>
+                        </li>
                         @if( Auth::user()->type == 1)
                         <li class="nav-item">
                             <a class="nav-link"

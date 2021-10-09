@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\App as Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\App as Application;
 use App\Http\Controllers\Dashboard\MessageController;
+use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\OverviewController;
 use App\Http\Controllers\Dashboard\AdminAreaController;
 
@@ -57,6 +58,8 @@ Route::get('/contact', function () {
 
 // User
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('dashboard.profile');
+Route::post('/dashboard/profile', [ProfileController::class, 'store'])->name('dashboard.profile');
 Route::post('/dashboard/message', [MessageController::class, 'store'])->name('dashboard.message');
 
 // Admin
