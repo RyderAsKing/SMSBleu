@@ -17,6 +17,26 @@ return [
     'app.profile' => 'Profile',
     'app.edit' => 'Edit',
     'app.delete' => 'Delete',
+    'app.tos' => 'Terms of service',
+    'app.update' => 'Update',
+    'app.language' => 'Language',
+    'app.blank' => 'Leave blank if no changes required',
+
+    // Titles
+    'title.terms' => 'Terms',
+    'title.use_license' => 'Use License',
+    'title.sms_messaging' => 'SMS Messaging',
+    'title.sales' => 'Sales',
+    'title.your_data' => 'Your data',
+    'title.disclaimer' => 'Disclaimer',
+    'title.limitations' => 'Limitations',
+    'title.accuracy' => 'Accuracy',
+    'title.links' => 'Links',
+    'title.modifications' => 'Modifications',
+    'title.law' => 'Governing Law',
+    'title.country' => 'Country',
+    'title.spoofing' => 'Spoofing',
+    'title.note' => 'Note',
 
     // Form
     'app.send' => 'Send',
@@ -54,6 +74,8 @@ return [
     // Errors
     'error.no_logs' => 'No logs available',
     'error.no_credits' => "You don't have enough credits to complete this action",
+
+    // Terms
     'tos.terms' => "By accessing the SMSBleu.com website, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with all applicable local laws. If you do not agree with any of these conditions, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark laws. Your SMSBleu account is subject to immediate termination if you fail to comply with any of these conditions.",
     'tos.license' => '<ol type="a">
                                 <li>Permission is granted to temporarily download one copy of the materials (information
@@ -123,12 +145,12 @@ return [
                                     <ol type="i">
                                         <li>your SMS messages are unable to reach your target number;</li>
                                         <li>your target country and/or network must be on our <a
-                                                href="#">list of
+                                                href="countries">list of
                                                 supported countries</a>;</li>
                                         <li>if your complaint is not being able to use a custom sender ID, your target
                                             country/network
                                             must be
-                                            <a href="#">listed</a> to support "SMS Spoofing".
+                                            <a href="countries">listed</a> to support "SMS Spoofing".
                                         </li>
                                     </ol>
                                 </li>
@@ -158,7 +180,7 @@ return [
                                             use the
                                             SMSBleu service, and is provided at your own volition;</li>
                                         <li>you may request account deletion and/or your account data by <a
-                                                href="/#support">contacting
+                                                href="contact">contacting
                                                 us
                                                 here</a>. Your SMS logs can be deleted from our servers, but for legal
                                             reasons they will
@@ -233,4 +255,17 @@ return [
     'tos.law' => "These terms and conditions are governed by and construed in accordance with the laws of
                                 Norway and you
                                 irrevocably submit to the exclusive jurisdiction of the courts in that location.",
+
+
+    // Country text
+    'country.disclaimer' => 'Please note that the terms for SMS broadcasts in individual countries are constantly changing, and we therefore cannot be held responsible for incorrect information. However, we make every effort to ensure that all information is up-to-date.',
+    'country.yes' => 'Yes',
+    'country.yes_note' => 'Yes (see note)',
+    'country.yes_star' => 'Yes*',
+    'country.no' => 'No',
+    'country.no_note' => 'No (see note)',
+    'country.no_star' => 'No*',
+    'country.sometimes' => 'Sometimes',
+    'country.sometimes_star' => 'Sometimees*',
+    'country.unknown' => 'Unknown',
 ];

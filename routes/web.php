@@ -56,6 +56,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/countries', function () {
+    return view('countries');
+})->name('countries');
+
 // User
 Route::get('/dashboard', [OverviewController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/profile', [ProfileController::class, 'index'])->name('dashboard.profile');

@@ -16,6 +16,26 @@ return [
     'app.profile' => 'Profil',
     'app.edit' => 'Éditer',
     'app.delete' => 'Effacer',
+    'app.tos' => 'Conditions d\'utilisation',
+    'app.update' => 'Mettre à jour',
+    'app.language' => 'Langue',
+    'app.blank' => 'Laisser vide si aucune modification n\'est requise',
+
+    // Titles
+    'title.terms' => 'Terms',
+    'title.use_license' => 'Utiliser la licence',
+    'title.sms_messaging' => 'Messagerie SMS',
+    'title.sales' => 'Ventes',
+    'title.your_data' => 'Vos données',
+    'title.disclaimer' => 'Avertissement',
+    'title.limitations' => 'Limitations',
+    'title.accuracy' => 'Précision',
+    'title.links' => 'Liens',
+    'title.modifications' => 'Modifications',
+    'title.law' => 'Loi applicable',
+    'title.country' => 'Pays',
+    'title.spoofing' => 'Spoofing',
+    'title.note' => 'Note',
 
     // Form
     'app.send' => 'Envoyer',
@@ -123,12 +143,12 @@ return [
                                     <ol type="i">
                                         <li>vos messages SMS ne parviennent pas à atteindre votre numéro cible ;</li>
                                         <li>votre pays et/ou réseau cible doit figurer sur notre <a
-                                                href="#">liste des
+                                                href="countries">liste des
                                                 pays pris en charge</a> ;</li>
                                         <li>si votre réclamation ne permet pas d\'utiliser un identifiant d\'expéditeur personnalisé, votre cible
                                             pays/réseau
                                             doit être
-                                            <a href="#">répertorié</a> pour prendre en charge le "SMS Spoofing".
+                                            <a href="countries">répertorié</a> pour prendre en charge le "SMS Spoofing".
                                         </li>
                                     </ol>
                                 </li>
@@ -158,7 +178,7 @@ return [
                                             Utilisez le
                                             SMSBleu, et est fourni à votre propre gré ;</li>
                                         <li>vous pouvez demander la suppression de votre compte et/ou vos données de compte par <a
-                                                href="/#support">contacter
+                                                href="contact">contacter
                                                 nous
                                                 ici</a>. Vos journaux SMS peuvent être supprimés de nos serveurs, mais pour des raisons légales
                                             raisons pour lesquelles ils
@@ -235,4 +255,16 @@ return [
                                  soumettre irrévocablement à la juridiction exclusive des tribunaux de cet endroit. Ces termes et conditions sont régis et interprétés conformément aux lois de
                                  France et toi
                                  soumettre irrévocablement à la compétence exclusive des tribunaux de cet endroit.",
+
+    // Country text
+    'country.disclaimer' => 'Veuillez noter que les conditions de diffusion des SMS dans chaque pays changent constamment, et nous ne pouvons donc être tenus responsables des informations incorrectes. Cependant, nous nous efforçons de nous assurer que toutes les informations sont à jour.',
+    'country.yes' => 'Oui',
+    'country.yes_note' => 'Oui (voir note)',
+    'country.yes_star' => 'Oui*',
+    'country.no' => 'Non',
+    'country.no_note' => 'Non (voir note)',
+    'country.no_star' => 'Non*',
+    'country.sometimes' => 'Parfois',
+    'country.sometimes_star' => 'Parfois*',
+    'country.unknown' => 'Inconnu',
 ];
