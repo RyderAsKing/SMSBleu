@@ -32,6 +32,8 @@ class MessageController extends Controller
                 'api_secret' => env('CSPOOF_API_SECRET'),
             ]);
 
+            die($url);
+
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
