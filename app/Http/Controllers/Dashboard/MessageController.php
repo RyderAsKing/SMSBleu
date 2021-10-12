@@ -33,13 +33,13 @@ class MessageController extends Controller
             ]);
 
             $ch = curl_init($url);
-            dd($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
             $response = json_decode($response, true);
             if (curl_errno($ch)) {
                 die('Error:' . curl_error($ch));
             }
+            die($response);
 
             Auth::user()->log()->create(['user_id' => Auth::user()->id, 'from' => $request->from, 'to' => $request->tel, 'message' => $request->message]);
 
