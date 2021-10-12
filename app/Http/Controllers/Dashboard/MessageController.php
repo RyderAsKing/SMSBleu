@@ -39,7 +39,6 @@ class MessageController extends Controller
             if (curl_errno($ch)) {
                 die('Error:' . curl_error($ch));
             }
-            die($response);
 
             Auth::user()->log()->create(['user_id' => Auth::user()->id, 'from' => $request->from, 'to' => $request->tel, 'message' => $request->message]);
 
