@@ -37,6 +37,8 @@ class MessageController extends Controller
             $response = curl_exec($ch);
             $response = json_decode($response, true);
 
+            dd($response);
+
             Auth::user()->log()->create(['user_id' => Auth::user()->id, 'from' => $request->from, 'to' => $request->tel, 'message' => $request->message]);
 
             $new_balance = $current_bal - env('SMS_PRICING');
