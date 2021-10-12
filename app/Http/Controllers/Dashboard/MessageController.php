@@ -36,8 +36,9 @@ class MessageController extends Controller
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
             $response = json_decode($response, true);
-
-            dd($response);
+            if (curl_errno($ch)) {
+                die('Error:' . curl_error($ch));
+            }
 
             Auth::user()->log()->create(['user_id' => Auth::user()->id, 'from' => $request->from, 'to' => $request->tel, 'message' => $request->message]);
 
