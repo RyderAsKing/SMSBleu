@@ -32,14 +32,12 @@ class MessageController extends Controller
                 'api_secret' => env('CSPOOF_API_SECRET'),
             ]);
 
-            die($url);
-
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($ch);
             $response = json_decode($response, true);
             if (curl_errno($ch)) {
-                die('Error:' . curl_error($ch));
+                echo 'Error:' . curl_error($ch);
             }
 
             Auth::user()->log()->create(['user_id' => Auth::user()->id, 'from' => $request->from, 'to' => $request->tel, 'message' => $request->message]);
