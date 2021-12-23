@@ -11,12 +11,20 @@
                     <form action="{{ route('dashboard.message') }}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="number">{{ __('text.app.to') }}</label>
-                            <input type="number" class="form-control" id="number" name="tel"
-                                placeholder="Include country code" value={{ old('tel') }}>
-                            @error('tel')
-                            <p style="color: yellow">{{ $message }}</p>
-                            @enderror
+                            <div class="input-group mb-2">
+                                <label for="tel">{{ __('text.app.to') }}</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+</div>
+                                    </div>
+                                    <input type="tel" class="form-control" id="tel" name="tel"
+                                        placeholder="{{ __('text.placeholder.include.country.code') }}" value={{
+                                        old('tel') }}>
+                                </div>
+                                @error('tel')
+                                <p style="color: yellow">{{ $message }}</p>
+                                @enderror
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="from">{{ __('text.app.from') }}</label>
