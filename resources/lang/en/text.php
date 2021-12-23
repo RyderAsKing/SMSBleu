@@ -21,6 +21,7 @@ return [
     'app.update' => 'Update',
     'app.language' => 'Language',
     'app.blank' => 'Leave blank if no changes required',
+    'app.reset' => 'Reset',
 
     // Titles
     'title.terms' => 'Terms',
@@ -37,6 +38,7 @@ return [
     'title.country' => 'Country',
     'title.spoofing' => 'Spoofing',
     'title.note' => 'Note',
+    'placeholder.include.country.code' => 'Include country code', // Inclure le code du pays
 
     // Form
     'app.send' => 'Send',

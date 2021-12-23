@@ -20,6 +20,7 @@ return [
     'app.update' => 'Mettre à jour',
     'app.language' => 'Langue',
     'app.blank' => 'Laisser vide si aucune modification n\'est requise',
+    'app.reset' => 'Réinitialisation',
 
     // Titles
     'title.terms' => 'Terms',
@@ -36,6 +37,7 @@ return [
     'title.country' => 'Pays',
     'title.spoofing' => 'Spoofing',
     'title.note' => 'Note',
+    'placeholder.include.country.code' => 'Inclure le code du pays', // Inclure le code du pays
 
     // Form
     'app.send' => 'Envoyer',
