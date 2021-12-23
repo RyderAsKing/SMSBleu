@@ -61,6 +61,8 @@
                             @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="{{ route('dashboard.admin.users.edit.reset', $user->id) }}" class="btn btn-danger">{{
+                            __('text.app.reset') }}</a>
                     </form>
                 </div>
             </div>

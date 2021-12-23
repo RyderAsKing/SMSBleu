@@ -63,4 +63,13 @@ class UsersController extends Controller
 
         return redirect()->route('dashboard.admin.users.edit', $id)->with(['success' => 'Edited successfully']);
     }
+
+    public function reset_credits($id)
+    {
+        $user = User::findOrFail($id);
+        $user->balance = 0;
+        $user->save();
+
+        return redirect()->route('dashboard.admin.users.edit', $id)->with(['success' => 'Edited successfully']);
+    }
 }

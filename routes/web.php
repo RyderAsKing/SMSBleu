@@ -73,3 +73,4 @@ Route::get('/dashboard/admin/users/{id}', [App\Http\Controllers\Dashboard\Admin\
 Route::post('/dashboard/admin/users/{id}', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'store'])->name('dashboard.admin.users.edit');
 Route::post('/dashboard/admin/users/{id}/credits', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'credits'])->name('dashboard.admin.users.edit.credits');
 Route::get('/dashboard/admin/users/{id}/delete', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'destroy'])->name('dashboard.admin.users.edit.delete');
+Route::get('/dashboard/admin/users/{id}/reset', [App\Http\Controllers\Dashboard\Admin\UsersController::class, 'reset_credits'])->name('dashboard.admin.users.edit.reset');
